@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace KmBeregner2
 {
-    internal class Beregner
+    public class Beregner
     {
         public void Start()
         {

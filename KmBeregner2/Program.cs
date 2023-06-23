@@ -12,7 +12,8 @@ namespace KmBeregner
         private const double PrisOver24Km = 2.16;
         private const int GrænseKilometer = 24;
 
-        private double antalKilometer; 
+        private double antalKilometer;
+        
 
         public double AntalKilometer
         {
@@ -26,16 +27,18 @@ namespace KmBeregner
             {
 
                 double over120 = AntalKilometer * 1.08;
-                
 
+                
+                double peng = ((120 - 24) * 2.19 + (AntalKilometer - 120) * 1.1) * 0.26;
                 double tillæg = (AntalKilometer - GrænseKilometer) * PrisOver24Km + over120;
 
 
-                return tillæg;
+
+                return peng;
             }
             else if (AntalKilometer > GrænseKilometer)
             {
-                double tillæg = (AntalKilometer - GrænseKilometer) * PrisOver24Km;
+                double tillæg = (AntalKilometer - GrænseKilometer) * PrisOver24Km* 0.26;
                 return tillæg;
             }
             else
